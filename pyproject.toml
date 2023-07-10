@@ -16,27 +16,25 @@ pydantic = "^2.0.2"
 narrate = "jinja_text_generation.narrate:cli"
 
 
+[tool.mypy]
+plugins = [
+  "pydantic.mypy"
+]
+
+follow_imports = "silent"
+warn_redundant_casts = true
+warn_unused_ignores = true
+disallow_any_generics = true
+check_untyped_defs = true
+no_implicit_reexport = true
+
+# for strict mypy: (this is the tricky one :-))
+disallow_untyped_defs = true
+
 [tool.pydantic-mypy]
 init_forbid_extra = true
 init_typed = true
-warn_untyped_fields = true
-warn_unused_ignores = true
-warn_redundant_casts = true
-warn_unused_configs = true
-disallow_untyped_defs = true
-disallow_incomplete_defs = true
-check_untyped_defs = true
-strict_equality = true
-no_implicit_optional = true
-strict_optional = true
-implicit_reexport = false
-show_error_codes = true
-show_column_numbers = true
-pretty = true
-color_output = true
-cache_dir = ".mypy_cache"
-python_version = "3.11"
-platform = "linux"
+warn_required_dynamic_aliases = true
 
 
 [build-system]

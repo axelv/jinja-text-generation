@@ -1,5 +1,5 @@
 import logging
-from typing import Any
+from typing import Any, Type
 from jinja2.filters import do_pprint as jinja2_do_pprint
 from pydantic import BaseModel, conlist, TypeAdapter, ValidationError, field_validator
 
@@ -19,9 +19,10 @@ class Coding(BaseModel):
 
         return self.display or f"{self.system}#{self.code}"
 
+NonEmptyList:Type[list[Coding]] = conlist(Coding,min_length=1)
 class CodeableConcept(BaseModel):
     text: str | None = None
-    coding: None | conlist(Coding,min_length=1)  = None # type: ignore
+    coding: None | NonEmptyList  = None  # type: ignore
 
     @field_validator("coding",mode="before")
     def coerce_empty_list(cls, value):
