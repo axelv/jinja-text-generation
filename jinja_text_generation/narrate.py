@@ -10,6 +10,7 @@ env = Environment(
     autoescape=select_autoescape()
 )
 
+# Register the filters to help with text generation
 env.filters["pad_column"] = do_pad_column
 env.filters["pprint"] = do_pprint
 
@@ -19,5 +20,5 @@ env.filters["pprint"] = do_pprint
 def cli(input_file, type):
     """Generate the narrative for a questionnaire"""
     template = env.get_template(f"{type}.txt")
-
+    # Load the JSON file and render using the template
     print(template.render(table=json.load(input_file)))

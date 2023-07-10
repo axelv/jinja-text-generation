@@ -10,7 +10,7 @@ class Table(TypedDict):
     data: list[dict[str, Any]]
 
 def do_pad_column(content:str, table, column, char:str=" "):
-    """Return the width of a column in a table."""
+    """Pad a column to the length of the longest value in the column"""
     header = table["header"]
     rows = table["data"]
     col_lengths = [len(do_pprint(row[header[column - 1]["id"]])) for row in rows]

@@ -16,6 +16,7 @@ class Coding(BaseModel):
     system: str
     
     def __str__(self) -> str:
+
         return self.display or f"{self.system}#{self.code}"
 
 class CodeableConcept(BaseModel):
