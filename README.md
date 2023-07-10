@@ -25,6 +25,6 @@ narrate INPUT_FILE -t <template-name>
 Given the example data structure `table1.json`, you can generate the narrative with the following command:
 
 ```bash 
-narrate narrate table1.json -t table
+narrate table1.json -t table
 ```
 
