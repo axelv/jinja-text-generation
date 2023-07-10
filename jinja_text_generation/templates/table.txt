@@ -1,0 +1,7 @@
+{% set data = table.data -%}
+{% set header = table.header -%}
+{% for h in header %}| {{h.name | pad_column(table, loop.index)}} {% endfor %} |
+{% for h in header %}| {{"" | pad_column(table, loop.index, "-")}} {% endfor %} |
+{% for row in data -%}
+{% for col in header %}| {{ row[col.id]|pprint|pad_column(table, loop.index)}} {% endfor %} |
+{% endfor %}

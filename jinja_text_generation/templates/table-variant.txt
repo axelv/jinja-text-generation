@@ -1,0 +1,2 @@
+{% extends "table.txt" %}
+{% block table_cell %}|{{super()}}|{% endblock table_cell%}

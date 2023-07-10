@@ -1,0 +1,65 @@
+{
+  "header": [
+    {
+      "name": "Column 1",
+      "id": "column1"
+    },
+    {
+      "name": "Column 2",
+      "id": "column2"
+    },
+    {
+      "name": "Column 3",
+      "id": "column3"
+    }
+  ],
+  "data": [
+    {
+      "column1": { "value": 2.21, "unit": "ng/ml" },
+      "column2": "value2",
+      "column3": {
+        "text": "test",
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "12345-6",
+            "display": "Test"
+          }
+        ]
+      }
+    },
+    {
+      "column1": { "value": 3.21, "unit": "ng/ml" },
+      "column2": "value4 with a lot of text",
+      "column3": {
+        "text": "test without coding",
+        "coding": []
+      }
+    },
+    {
+      "column1": { "value": 4.21, "unit": "ng/ml" },
+      "column2": "value6",
+      "column3": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "12345-6",
+            "display": "Test"
+          }
+        ]
+      }
+    },
+    {
+      "column1": { "value": 5.21, "unit": "ng/ml" },
+      "column2": "value8",
+      "column3": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "12345-6"
+          }
+        ]
+      }
+    }
+  ]
+}
